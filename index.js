@@ -1,33 +1,41 @@
 // Write your solution in this file!
-let employee = {
-    name: "John Doe",
-    streetAddress: "123 Main St",
-  };
+const cats = ["Milo", "Otis", "Garfield"]
 
-  function updateEmployeeWithKeyAndValue(employee, key, value) {
-    return {
-      ...employee,
-      [key]: value,
-    };
-  }
-  
-  function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
-    employee[key] = value;
-    return employee; 
-  }
-  
+function destructivelyAppendCat(name){
+  cats.push(name);
+}
 
-  function deleteFromEmployeeByKey(employee, key) {
-    
-    let newEmployee = { ...employee };
-    delete newEmployee[key];
-    return newEmployee;
-  }
+function destructivelyPrependCat(name){
+  cats.unshift(name);
+
+}
+function destructivelyRemoveLastCat(name){
+  cats.pop(name);
+}
+
+function destructivelyRemoveFirstCat(name){
+  cats.shift(name);
+}
+
+function appendCat(name){
+  const newCats = [...cats,name]
+  return newCats;
+}
+
+function prependCat(name){
+  const newCats = [name,...cats];
+  return newCats;
+
+}
+
+function removeLastCat (){
+  const newCats = cats.slice(0, cats.length -1);
+  return newCats;
+}
+
+function removeFirstCat(){
+  const newCats = cats.slice(1);
+  return newCats; 
+}
   
-  
-  function destructivelyDeleteFromEmployeeByKey(employee, key) {
-    
-    delete employee[key];
-    return employee; 
-  }
   
